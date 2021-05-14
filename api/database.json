@@ -1,0 +1,58 @@
+{
+  "authors" : [
+    {
+      "id": 1,
+      "name": "CS Lewis",
+      "email": "cslewster@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "John Bunyan",
+      "email": "johnny@yahoo.com"
+    },
+    {
+      "id": 3,
+      "name": "Ted Dekker",
+      "email": "helloTed@gmail.com"
+    }
+  ],
+  "recipients": [
+    {
+      "id": 1,
+      "name": "Jack Bauer",
+      "email": "24hoursJack@gmail.com"
+    },
+    {
+      "id": 2,
+      "name": "Homer Simpson",
+      "email": "dooohhh@gmail.com"
+    },
+    {
+      "id": 3,
+      "name": "Michael Scott",
+      "email": "michaelscarn@yahoo.com"
+    }
+  ],
+  "topics": [
+    {
+      "id": 1,
+      "topic": "Politics"
+    },
+    {
+      "id": 2,
+      "topic": "Faith"
+    },
+    {
+      "id": 3,
+      "topic": "Friendly"
+    },
+    {
+      "id": 4,
+      "topic": "Relationships"
+    },
+    {
+      "id": 5,
+      "topic": "Condolences"
+    }
+  ]
+}
