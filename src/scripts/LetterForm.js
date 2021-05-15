@@ -1,4 +1,44 @@
-import { getAuthors, getRecipients, getTopics } from "./dataAccess.js"
+import { getAuthors, getRecipients, getTopics, sendLetter } from "./dataAccess.js"
+
+const container = document.querySelector("#container")
+
+// container.addEventListener("change", (event) => {
+//     if (event.target.id === "authors") {
+//       container.dispatchEvent(new CustomEvent("stateChanged"));
+//     }
+//   });
+
+// container.addEventListener("change", (event) => {
+//     if (event.target.name === "topic") {
+//       container.dispatchEvent(new CustomEvent("stateChanged"));
+//     }
+//   });
+
+//   container.addEventListener("change", (event) => {
+//     if (event.target.id === "recipients") {
+//       container.dispatchEvent(new CustomEvent("stateChanged"));
+//     }
+//   });
+
+container.addEventListener("click", (clickEvent) => {
+    if(clickEvent.target.id === "sendButton") {
+       debugger
+        const userAuthorId = document.querySelector(".authors").value
+        const letterField = document.querySelector("input[name='fieldLetter']").value
+        const userTopicId = document.querySelector("input[type=radio]:checked").value
+        const userRecipientId = document.querySelector(".recipients").value
+        
+
+        const letterToSendToAPI = {
+            authorId : parseInt(userAuthorId),
+            letter: letterField,
+            topicId : parseInt(userTopicId),
+            recipientId: parseInt(userRecipientId)
+        }
+
+        sendLetter(letterToSendToAPI)
+    }
+})
 
 
 export const LetterForm = () => {
@@ -14,7 +54,7 @@ export const LetterForm = () => {
         <option value="">Choose</option>
         ${authors.map((author) => {
             return `
-            <option value="${author.id}">${author.name}</option>
+            <option class="author" value="${author.id}">${author.name}</option>
             `
         }).join("")}
         </select>
@@ -25,12 +65,12 @@ export const LetterForm = () => {
         <input type="text" name="fieldLetter" class="input"/>
         </div>
 
-        <div class="field topics">
+        <div class="field">
         <label>Topics</label>
-        <ul>
+        <ul class="topics">
         ${topics.map((topic) => {
             return `<li>
-            <input type="radio" name"topic" value="${topic.id}" /> ${topic.topic}
+            <input type="radio" name="topic" value="${topic.id}" /> ${topic.topic}
             </li>
             `
         }).join("")}
@@ -43,12 +83,12 @@ export const LetterForm = () => {
         <option value="">Choose</option>
         ${recipients.map((recipient) => {
             return `
-                <option value="${recipient.id}">${recipient.name}</option>
+                <option class="recipient" value="${recipient.id}">${recipient.name}</option>
             `}).join("")}
         </select>
         </div>
 
-        <button>Send Letter</button>
+        <button id="sendButton">Send Letter</button>
 
     `
 }

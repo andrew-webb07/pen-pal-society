@@ -1,5 +1,5 @@
 {
-  "authors" : [
+  "authors": [
     {
       "id": 1,
       "name": "CS Lewis",
@@ -54,5 +54,8 @@
       "id": 5,
       "topic": "Condolences"
     }
+  ],
+  "completedLetters": [
+   
   ]
 }

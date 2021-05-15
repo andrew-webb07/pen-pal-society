@@ -7,6 +7,8 @@ const applicationState = {
 
 const API = "http://localhost:8088"
 
+const container = document.querySelector("#container")
+
 export const fetchAuthors = () => {
     return fetch(`${API}/authors`)
     .then(response => response.json())
@@ -41,4 +43,18 @@ export const fetchRecipients = () => {
 
 export const getRecipients = () => {
     return [...applicationState.recipients]
+}
+
+export const sendLetter = (userLetter) => {
+    return fetch(`${API}/completedLetters`, {
+        method: "POST",
+        headers: {
+            "Content-Type" : "application/json"
+        },
+        body: JSON.stringify(userLetter)
+    })
+    .then(response => response.json())
+    .then(() => {
+        container.dispatchEvent(new CustomEvent("stateChanged"))
+    })
 }
