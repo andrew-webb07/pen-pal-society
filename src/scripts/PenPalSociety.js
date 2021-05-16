@@ -1,4 +1,5 @@
 import {LetterForm} from "./LetterForm.js"
+import {CompletedLetters} from "./CompletedLetters.js"
 
 export const PenPalSociety = () => {
     return `
@@ -10,7 +11,7 @@ export const PenPalSociety = () => {
 
         <section class="finishedLetters">
         <h2>Letters</h2>
-        
+        ${CompletedLetters()}
         </section>
     `
 }

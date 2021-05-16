@@ -58,3 +58,15 @@ export const sendLetter = (userLetter) => {
         container.dispatchEvent(new CustomEvent("stateChanged"))
     })
 }
+
+export const fetchCompletedLetters = () => {
+    return fetch(`${API}/completedLetters`)
+    .then(response => response.json())
+    .then((completedLetters) => {
+        applicationState.completedLetters = completedLetters
+    })
+}
+
+export const getCompletedLetters = () => {
+    return [...applicationState.completedLetters]
+}
