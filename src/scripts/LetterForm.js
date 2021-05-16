@@ -22,7 +22,7 @@ const container = document.querySelector("#container")
 
 container.addEventListener("click", (clickEvent) => {
     if(clickEvent.target.id === "sendButton") {
-       debugger
+    
         const userAuthorId = document.querySelector(".authors").value
         const letterField = document.querySelector("input[name='fieldLetter']").value
         const userTopicId = document.querySelector("input[type=radio]:checked").value
