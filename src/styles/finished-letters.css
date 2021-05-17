@@ -1,5 +1,10 @@
 .finishedLetter {
     border: black solid .2em;
     margin: 1em;
-    padding: .5em
+    padding: .5em;
+}
+
+.finishedLetter__items {
+    display: flex;
+    flex-direction: column;
 }
