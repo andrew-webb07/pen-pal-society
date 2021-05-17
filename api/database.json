@@ -57,17 +57,19 @@
   ],
   "completedLetters": [
     {
-      "authorId": 2,
-      "letter": "I wrote a letter",
+      "authorId": 3,
+      "letter": "I love the circle series",
       "topicId": 2,
-      "recipientId": 2,
+      "recipientId": 1,
+      "date": "5/17/2021",
       "id": 1
     },
     {
       "authorId": 2,
-      "letter": "i wrote a letter ",
-      "topicId": 4,
+      "letter": "Do not forget eternity.",
+      "topicId": 2,
       "recipientId": 2,
+      "date": "5/17/2021",
       "id": 2
     }
   ]

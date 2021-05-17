@@ -33,7 +33,8 @@ container.addEventListener("click", (clickEvent) => {
             authorId : parseInt(userAuthorId),
             letter: letterField,
             topicId : parseInt(userTopicId),
-            recipientId: parseInt(userRecipientId)
+            recipientId: parseInt(userRecipientId),
+            date: new Date().toLocaleDateString()
         }
 
         sendLetter(letterToSendToAPI)
